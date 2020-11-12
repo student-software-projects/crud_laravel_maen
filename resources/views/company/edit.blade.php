@@ -12,8 +12,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <form action="{{route('company.edit')}}" method="POST">
+            <form action="{{route('company.update',$company->id)}}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="form-group mt-4">
                     <label for="name">Nombre de la Empresa</label>
                     <input name="name" id="name" type="text" class="form-control" value="{{$company->name}}">
@@ -27,7 +28,7 @@
                     <input name="address" id="address" type="text" class="form-control" value="{{$company->address}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar Actualización</button>
-                <a class="btn btn-sm btn-danger" href="{{route('company.index')}}">Cancelar</a>
+                <a class="btn btn-sm btn-danger" href="{{ route('company.index')}}">Cancelar</a>
             </form>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\company;
 
 use App\Http\Controllers\Controller;
+use Egulias\EmailValidator\Warning\ObsoleteDTEXT;
 use Illuminate\Http\Request;
 use App\Models\company;
 
@@ -26,17 +27,19 @@ public function index()
     }
 
     public function edit($id){
-    $company=company::find();
-        return view('company.edit',compact('company'));
+    $company=company::find($id);
+           return view('company.edit',compact('company'));
     }
-    /*
+
         public function update(Request  $request, $id){
-            return $request->all();
+            $compay=company::find($id)->update($request->all());
+            return redirect()->route('company.index');
+
       }
-        /*
-        public function delete(){
-            return view('company.destroy');
-        }
-    */
+         public function destroy($id){
+            $company=company::find($id)->delete();
+            return redirect()->route('company.index');
+}
+
 
 }
