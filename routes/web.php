@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\company\CompanyController;
+use App\Http\Controllers\product\ProductController;
+
+Route::get('/', function () {  return view('welcome');
+});
 //compañias
 Route::get('company',[CompanyController::class,'index'])->name('company.index');
 Route::get('company/create',[CompanyController::class,'create'])->name('company.create');
@@ -12,5 +16,5 @@ Route::put('company/{id}',[CompanyController::class,'update'])->name('company.up
 Route::delete('company/{id}',[CompanyController::class,'destroy'])->name('company.destroy');
 // productos
 //Route::get('product',[CompanyController::class,'index'])->name('company.index');
-Route::get('product/create',[CompanyController::class,'create'])->name('product.create');
+Route::get('product/create',[ProductController::class,'create'])->name('product.create');
 

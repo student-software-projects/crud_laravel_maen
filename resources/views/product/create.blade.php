@@ -12,20 +12,19 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <form action="{{route('product.store')}}" method="POST">
+            <form action="{{route('company.store')}}" method="POST">
                 @csrf
                 <div class="form-group mt-4">
                     <label for="name">Compañia</label>
                     <select name="" id="" class="form-control" required>
-                        <option value="">seleccionar...</option>
                         @foreach($company as $company)
-                        <option value="{{ $company->id }}">{{$company->name}}</option>
+                            <option value="{{ $company->id }}">{{$company->name}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="nit">Tipo de Producto</label>
-                    <input name="nit" id="nit" type="text" class="form-control">
+                    <input name="nit" id=" nit" type="text" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="address">Direccion de la Empresa</label>

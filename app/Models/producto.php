@@ -12,7 +12,7 @@ class producto extends Model
     protected $table='products';
     protected $primaryKey='id';
     protected $fillable=[
-        'name','description','price','company_id','product_type:id'
+        'name','description','price','company_id','product_type_id'
     ];
 
 }

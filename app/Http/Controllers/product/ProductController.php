@@ -14,7 +14,8 @@ class ProductController extends Controller
     }
     */
     public function create(){
-        return view('product.create');
+        $companies=company::all();
+        return view('product.create',compact('companies'));
     }
     public function store(Request $request){
         $product=product::create($request->all());
